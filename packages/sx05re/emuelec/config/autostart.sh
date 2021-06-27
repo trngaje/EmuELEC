@@ -128,6 +128,12 @@ case "$DEFE" in
 	touch /var/lock/start.retro
 	systemctl start retroarch
 	;;
+"AttractMode")
+        rm -rf /var/lock/start.attract
+        touch /var/lock/start.attract
+        systemctl start attract
+        ;;
+
 *)
 	rm /var/lock/start.games
 	touch /var/lock/start.games
