@@ -131,7 +131,8 @@ case "$DEFE" in
 "AttractMode")
         rm -rf /var/lock/start.attract
         touch /var/lock/start.attract
-        systemctl start attract
+        #systemctl start attract
+	attract &
         ;;
 
 *)
