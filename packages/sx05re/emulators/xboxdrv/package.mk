@@ -19,23 +19,6 @@ GET_HANDLER_SUPPORT="git"
 PKG_TOOLCHAIN="manual"
 
 
-#PKG_CONFIGURE_OPTS_TARGET="CC=$CC CFLAGS='$CFLAGS' CPPFLAGS='$CXXFLAGS' CPP=$CXX LDFLAGS='$LDFLAGS'"
-#PKG_CONFIGURE_SCRIPT="$PKG_BUILD"
-
-#configure_package() {
-#sed -i "s|build/main.mk|$PKG_BUILD/build/main.mk|" "$PKG_BUILD/configure"
-
-
-
-#  cd $PKG_BUILD/unix
-#  autoconf
-  # now we know where we're building, assign a value
-  #PKG_CONFIGURE_SCRIPT="$PKG_BUILD/unix"
-  
-  
-#}
-
-
 make_target() {
 cd $PKG_BUILD
 
@@ -45,16 +28,6 @@ echo "CXX = $CXX"
 echo "CCFLAGS = $CFLAGS" 
 echo "CXXFLAGS = $CXXFLAGS" 
 echo "LINKFLAGS = $LDFLAGS" 
-
-#export CC=$CC
-#export CXX=$CXX
-
-
-
-#sed -i 's|SDL = `sdl2-config --cflags`|'"SDL = -I${SYSROOT_PREFIX}/usr/include/SDL2 -D_REENTRANT|" "$PKG_BUILD/Makefile.ogs"
-#sed -i "s|-I/usr/include/SDL2|-I${SYSROOT_PREFIX}/usr/include/SDL2|" "$PKG_BUILD/Makefile.ogs"
-#sed -i 's|SPARROW_LIB = $(SPARROW_FOLDER)|'"SPARROW_LIB = ${SYSROOT_PREFIX}/usr/lib|" "$PKG_BUILD/Makefile.ogs"
-#sed -i 's|INCLUDE += -I$(SPARROW_FOLDER)|'"INCLUDE += -I${SYSROOT_PREFIX}/usr/include|" "$PKG_BUILD/Makefile.ogs"
 
 sed -i "s|print target|print(target)|" "$PKG_BUILD/SConstruct"
 sed -i "s|print source|print(source)|" "$PKG_BUILD/SConstruct"
