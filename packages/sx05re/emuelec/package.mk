@@ -17,7 +17,8 @@ PKG_AUTORECONF="no"
 PKG_TOOLCHAIN="make"
 
 PKG_EXPERIMENTAL="munt nestopiaCV quasi88 xmil np2kai hypseus-singe dosbox-x"
-PKG_EMUS="$LIBRETRO_CORES advancemame PPSSPPSDL amiberry hatarisa openbor dosbox-staging mupen64plus-nx scummvmsa stellasa solarus dosbox-pure pcsx_rearmed ecwolf potator freej2me duckstation sfml attract sparrow3d glutexto gmenunx dinguxcommander_kor xboxdrv mupen64plus-ui-console"
+#flycastsa jzintv mupen64plus-ui-console xboxdrv
+PKG_EMUS="$LIBRETRO_CORES advancemame PPSSPPSDL amiberry hatarisa openbor dosbox-staging mupen64plus-nx mupen64plus-nx-alt scummvmsa stellasa solarus dosbox-pure pcsx_rearmed ecwolf potator freej2me duckstation fmsx-libretro sfml attract sparrow3d glutexto gmenunx dinguxcommander_kor"
 PKG_TOOLS="emuelec-tools"
 PKG_DEPENDS_TARGET+=" $PKG_TOOLS $PKG_EMUS $PKG_EXPERIMENTAL emuelec-ports"
 

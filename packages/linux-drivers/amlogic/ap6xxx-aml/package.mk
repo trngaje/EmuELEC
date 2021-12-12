@@ -3,8 +3,8 @@
 # Copyright (C) 2018-present Team CoreELEC (https://coreelec.org)
 
 PKG_NAME="ap6xxx-aml"
-PKG_VERSION="cd034aec32d087546324e49d0be78e2aeb779e28"
-PKG_SHA256="8cbc59e09b0f8cd0351b2f6fe7410cbd1e740c78a35d7cc7249e67d14975d014"
+PKG_VERSION="2b3ff5b064a65af0bad3d8fad15f41f0d16e856d"
+PKG_SHA256="8d5c08396b2d78d9af6a2c93fa8a06cac30d88c4ba4f2f4b8ebe4ffff03720a7"
 PKG_ARCH="arm aarch64"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/CoreELEC/ap6xxx-aml"
@@ -33,8 +33,8 @@ make_target() {
   if [ "$PROJECT" = "Amlogic-ng" ]; then
     echo
     echo "building ap6275s"
-    make -C  $PKG_BUILD/bcmdhd.100.10.315.x \
-         PWD=$PKG_BUILD/bcmdhd.100.10.315.x \
+    make -C  $PKG_BUILD/bcmdhd.100.10.545.x \
+         PWD=$PKG_BUILD/bcmdhd.100.10.545.x \
          KDIR=$(kernel_path) \
          ARCH=$TARGET_KERNEL_ARCH \
          CROSS_COMPILE=$TARGET_KERNEL_PREFIX \

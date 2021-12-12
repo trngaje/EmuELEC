@@ -10,7 +10,7 @@ PKG_DEPENDS_TARGET="toolchain linux glibc bzip2 zlib SDL2-git SDL2_image SDL2_tt
 PKG_LONGDESC="Amiberry is an optimized Amiga emulator for ARM-based boards."
 GET_HANDLER_SUPPORT="git"
 PKG_TOOLCHAIN="make"
-PKG_GIT_CLONE_BRANCH="master"
+PKG_EE_UPDATE=no
 
 pre_configure_target() {
   cd ${PKG_BUILD}

@@ -2,14 +2,28 @@
 # Copyright (C) 2019-present Shanti Gilbert (https://github.com/shantigilbert)
 
 PKG_NAME="sfml"
+if [ "$DEVICE" == "OdroidGoAdvance" ]; then
 PKG_VERSION="eb47be11116fe1382578c58141229b8991312bd9"
+else
+PKG_VERSION="754ed8fee142276608043cc08ba6fe92da5355a6"
+fi
+
 PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="SFML"
+if [ "$DEVICE" == "OdroidGoAdvance" ]; then
 PKG_SITE="https://github.com/trngaje/sfml-pi"
+else
+PKG_SITE="https://github.com/mickelson/sfml-pi"
+fi
 PKG_URL="$PKG_SITE.git"
 PKG_SOURCE_DIR="sfml-$PKG_VERSION*"
+
+if [ "$DEVICE" == "OdroidGoAdvance" ]; then
 PKG_DEPENDS_TARGET="toolchain flac libogg libvorbis openal-soft libjpeg-turbo freetype systemd libgo2"
+else
+PKG_DEPENDS_TARGET="toolchain flac libogg libvorbis openal-soft libjpeg-turbo freetype systemd libdrm gbm"
+fi
 PKG_SECTION="emuelec/mod"
 PKG_SHORTDESC="SFML on the odroid go advance with hardware graphics and no X11 dependency."
 PKG_LONGDESC="SFML on the odroid go advance with hardware graphics and no X11 dependency."
@@ -20,7 +34,7 @@ PKG_TOOLCHAIN="cmake-make"
 PKG_BUILD_FLAGS="+pic"
 
 
-
+if [ "$DEVICE" == "OdroidGoAdvance" ]; then
 PKG_CMAKE_OPTS_TARGET="-DUDEV_PATH_LIB=${SYSROOT_PREFIX}/usr/lib \
         -DJPEG_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
 		-DJPEG_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include \
@@ -38,6 +52,29 @@ PKG_CMAKE_OPTS_TARGET="-DUDEV_PATH_LIB=${SYSROOT_PREFIX}/usr/lib \
 		-DEGL_LIBRARY=${SYSROOT_PREFIX}/usr/lib/libEGL.so \
 		-DGLES_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include  \
 		-DGLES_LIBRARY=${SYSROOT_PREFIX}/usr/lib/libGLESv2.so"
+else
+PKG_CMAKE_OPTS_TARGET="-DUDEV_PATH_LIB=${SYSROOT_PREFIX}/usr/lib \
+        -DJPEG_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
+		-DJPEG_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include \
+		-DVORBIS_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
+		-DVORBISFILE_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
+		-DVORBISENC_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
+		-DFLAC_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
+		-DOGG_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
+		-DFREETYPE_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
+		-DVORBIS_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include \
+		-DOGG_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include \
+		-DFLAC_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include \
+		-DOPENGL_opengl_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
+		-DOPENGL_glx_LIBRARY=${SYSROOT_PREFIX}/usr/lib \
+		-DOPENGL_gl_LIBRARY=${SYSROOT_PREFIX}/usr/lib \ 
+		-DOPENGL_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include \
+		-DSFML_DRM=1 -DSFML_OPENGL_ES=1 \
+		-DEGL_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include \
+		-DEGL_LIBRARY=${SYSROOT_PREFIX}/usr/lib/libEGL.so \
+		-DGLES_INCLUDE_DIR=${SYSROOT_PREFIX}/usr/include  \
+		-DGLES_LIBRARY=${SYSROOT_PREFIX}/usr/lib/libGLESv2.so"		
+fi
 
 #PKG_MAKE_OPTS_TARGET=" INCLUDES=-I$SYSROOT_PREFIX/usr/include "
 #make_target() {

@@ -2,14 +2,14 @@
 # Copyright (C) 2019-present Shanti Gilbert (https://github.com/shantigilbert)
 
 PKG_NAME="emuelec-32bit-libs"
-PKG_VERSION="34eea148686949169e59933b3bd7271956962668"
-PKG_SHA256="e7bb643ba5311fa8a585aeec2974def00ee4a3b5d7077acc24cf6d33e6986614"
+PKG_VERSION="ec8b4dc1267974e39c5a3795139d069649773ecc"
+PKG_SHA256="7c8ec35347171374a16a72dfc1a2f95abb71a8d82712171e798d9e8615d43380"
 PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://github.com/emuelec/emuelec-32bit-libs"
 PKG_URL="$PKG_SITE/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET="toolchain $OPENGLES"
 PKG_LONGDESC="EmuELEC 32-bit libraries, binaries and cores to use with EmuELEC aarch64"
 PKG_TOOLCHAIN="manual"
 

@@ -23,6 +23,9 @@
 # Root password to integrate in the target system
   ROOT_PASSWORD="emuelec"
 
+# wireless daemon to use (wpa_supplicant/iwd)
+  WIRELESS_DAEMON="wpa_supplicant"
+  
 # Install glibc locales to the build (yes / no)
   GLIBC_LOCALES="yes"
 
@@ -259,6 +262,7 @@ easyrpg \
 fbalpha2012 \
 fbneo \
 fceumm \
+fceumm-mod \
 flycast \
 freeintv \
 fuse-libretro \
@@ -286,6 +290,7 @@ opera \
 parallel-n64 \
 pcsx_rearmed \
 picodrive \
+pocketcdg \
 pokemini \
 ppsspp \
 prboom \
@@ -318,7 +323,6 @@ desmume \
 desmume-2015 \
 lutro \
 melonds \
-pocketcdg \
 snes9x2005 \
 yabause \
 virtualjaguar"

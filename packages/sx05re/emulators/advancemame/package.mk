@@ -29,6 +29,13 @@ echo $VERSION > $PKG_BUILD/.version
 }
 
 make_target() {
+echo "STRIP = $STRIP"
+echo "CC = $CC"
+echo "CXX = $CXX"
+echo "CCFLAGS = $CFLAGS"
+echo "CXXFLAGS = $CXXFLAGS"
+echo "LINKFLAGS = $LDFLAGS"
+
 cd $PKG_BUILD
 ./autogen.sh
 ./configure --prefix=/usr --datadir=/usr/share/ --datarootdir=/usr/share/ --host=${TARGET_NAME} --enable-fb --enable-freetype --with-freetype-prefix=$SYSROOT_PREFIX/usr/ --enable-slang
